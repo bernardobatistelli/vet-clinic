@@ -27,9 +27,6 @@ export class Tutor {
   @Column()
   zip_code: string
 
-  @OneToMany(() => Pet, (pet) => pet.tutor, {
-    cascade: true,
-  })
-  @JoinColumn()
+  @OneToMany((type) => Pet, (pet) => pet.tutor)
   pets: Pet[]
 }

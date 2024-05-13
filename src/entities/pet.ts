@@ -21,6 +21,6 @@ export class Pet {
   @Column()
   date_of_birth: string
 
-  @ManyToOne(() => Tutor, (tutor) => tutor.pets)
+  @ManyToOne(() => Tutor, (tutor) => tutor.pets, { onDelete: "CASCADE" })
   tutor: Tutor
 }

@@ -1,3 +1,4 @@
+import { PetController } from './controllers/pet-controller'
 import { TutorController } from './controllers/tutor-controller'
 
 export const Routes = [
@@ -18,5 +19,11 @@ export const Routes = [
     route: '/tutor',
     controller: TutorController,
     action: 'create',
+  },
+  {
+    method: 'post',
+    route: '/pet/:tutorId',
+    controller: PetController,
+    action: 'save',
   },
 ]
