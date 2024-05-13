@@ -1,11 +1,11 @@
 meta {
-  name: Create tutor
+  name: Update tutor
   type: http
-  seq: 2
+  seq: 6
 }
 
-post {
-  url: http://localhost:3000/tutor
+put {
+  url: http://localhost:3000/tutors/1
   body: json
   auth: none
 }
@@ -13,9 +13,9 @@ post {
 body:json {
   {
    "id": 1,
-   "name": "Jonas",
+   "name": "hallex",
    "phone": "85989323895",
-   "email": "jonas@paidepet.com",
+   "email": "jose.abreu@compasso.com",
    "date_of_birth": "1993-12-12 10:10",
    "zip_code": "61760000"
   }

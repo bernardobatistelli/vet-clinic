@@ -26,4 +26,28 @@ export const Routes = [
     controller: PetController,
     action: 'save',
   },
+  {
+    method: 'put',
+    route: '/tutors/:id',
+    controller: TutorController,
+    action: 'update',
+  },
+  {
+    method: 'put',
+    route: '/pet/:petId/tutor/:tutorId',
+    controller: PetController,
+    action: 'update',
+  },
+  {
+    method: 'delete',
+    route: '/tutors/:id',
+    controller: TutorController,
+    action: 'delete'
+  },
+  {
+    method: 'delete',
+    route: '/pet/:petId/tutor/:tutorId',
+    controller: PetController,
+    action: 'delete'
+  }
 ]

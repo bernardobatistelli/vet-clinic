@@ -14,7 +14,6 @@ Adicionais que serão utilizados
 - Utilizar Typescript
 - ORM TypeORM 
 - Eslint e prettier
-- Testes 
 
 Requisitos 
 
