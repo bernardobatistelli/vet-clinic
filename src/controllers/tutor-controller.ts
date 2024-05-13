@@ -6,13 +6,19 @@ export class TutorController {
   private tutorRepository = AppDataSource.getRepository(Tutor)
 
   async getAll() {
-    return this.tutorRepository.find()
+    return await this.tutorRepository.find({
+      relations: {
+        pets: true
+      }
+    })
   }
 
   async getById(request: Request) {
     const id = parseInt(request.params.id)
 
-    const user = await this.tutorRepository.findOne({ where: { id } })
+    const user = await this.tutorRepository.findOne({ where: { id }, relations: {
+      pets: true
+    } })
 
     if (!user) {
       return 'User not found'
