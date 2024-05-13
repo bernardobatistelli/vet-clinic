@@ -43,5 +43,11 @@ export const Routes = [
     route: '/tutors/:id',
     controller: TutorController,
     action: 'delete'
+  },
+  {
+    method: 'delete',
+    route: '/pet/:petId/tutor/:tutorId',
+    controller: PetController,
+    action: 'delete'
   }
 ]

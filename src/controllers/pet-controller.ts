@@ -1,6 +1,6 @@
 import { AppDataSource } from '../data-source'
 import { Pet } from '../entities/pet'
-import { Request } from 'express'
+import { Request, Response } from 'express'
 import { Tutor } from '../entities/tutor'
 
 export class PetController {
@@ -65,4 +65,28 @@ export class PetController {
 
     return await this.petRepository.save(pet)
   }
-}
+
+  async delete (request: Request, response: Response) {
+    const tutorId = parseInt(request.params.tutorId);
+    const petId = parseInt(request.params.petId);
+
+    const tutor = await this.tutorsRepository.findOne({
+      where: {
+        id: tutorId,
+      },
+    });
+
+    const pet = await this.petRepository.findOne({
+      where: {
+        id: petId,
+      },
+    });
+
+    if (!pet) {
+      return "Pet não encontrado"
+    }
+
+    await this.petRepository.delete(pet);
+
+    return "Pet deletado";
+}}
