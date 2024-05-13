@@ -1,0 +1,22 @@
+meta {
+  name: Create pet
+  type: http
+  seq: 5
+}
+
+post {
+  url: http://localhost:3000/pet/3
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+   "id": 5,
+   "name": "Lilo",
+   "species": "dog",
+   "carry": "p",
+   "weight": 5,
+   "date_of_birth": "1993-12-12 10:10"
+  }
+}
