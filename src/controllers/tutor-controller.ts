@@ -30,4 +30,19 @@ export class TutorController {
     const tutor = this.tutorRepository.create(request.body)
     return this.tutorRepository.save(tutor)
   }
+
+  async update(request: Request) {
+    const { id, name, phone, email, date_of_birth, zip_code } = request.body;
+
+    const tutor = Object.assign(new Tutor(), {
+      id,
+      name,
+      phone,
+      email,
+      date_of_birth,
+      zip_code,
+    });
+
+    return await this.tutorRepository.save(tutor);
+  }
 }
