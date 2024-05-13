@@ -38,4 +38,10 @@ export const Routes = [
     controller: PetController,
     action: 'update',
   },
+  {
+    method: 'delete',
+    route: '/tutors/:id',
+    controller: TutorController,
+    action: 'delete'
+  }
 ]

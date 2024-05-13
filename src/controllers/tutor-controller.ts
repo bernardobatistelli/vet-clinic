@@ -45,4 +45,17 @@ export class TutorController {
 
     return await this.tutorRepository.save(tutor);
   }
+
+  async delete (request: Request) {
+    const id = parseInt(request.params.id)
+    const tutor = await this.tutorRepository.findOne({ where: { id } })
+
+    if (!tutor) {
+      return 'Tutor not found'
+    }
+
+    await this.tutorRepository.delete(tutor)
+
+    return 'Tutor deleted'
+  }
 }
