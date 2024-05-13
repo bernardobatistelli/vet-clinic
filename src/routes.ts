@@ -13,4 +13,10 @@ export const Routes = [
     controller: TutorController,
     action: 'getById',
   },
+  {
+    method: 'post',
+    route: '/tutor',
+    controller: TutorController,
+    action: 'create',
+  },
 ]

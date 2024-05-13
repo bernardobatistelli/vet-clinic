@@ -1,0 +1,22 @@
+meta {
+  name: Create tutor
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:3000/tutor
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+   "id": 1,
+   "name": "Jonas",
+   "phone": "85989323895",
+   "email": "jonas@paidepet.com",
+   "date_of_birth": "1993-12-12 10:10",
+   "zip_code": "61760000"
+  }
+}
