@@ -5,7 +5,7 @@ import {
   OneToMany,
   PrimaryGeneratedColumn,
 } from 'typeorm'
-import { Pet } from './Pet'
+import { Pet } from './pet'
 
 @Entity()
 export class Tutor {
@@ -27,7 +27,9 @@ export class Tutor {
   @Column()
   zip_code: string
 
-  @OneToMany(() => Pet, (pet) => pet.tutor)
+  @OneToMany(() => Pet, (pet) => pet.tutor, {
+    cascade: true,
+  })
   @JoinColumn()
   pets: Pet[]
 }

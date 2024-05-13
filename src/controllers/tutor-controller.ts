@@ -19,4 +19,9 @@ export class TutorController {
     }
     return user
   }
+
+  async create(request: Request) {
+    const tutor = this.tutorRepository.create(request.body)
+    return this.tutorRepository.save(tutor)
+  }
 }
