@@ -32,4 +32,10 @@ export const Routes = [
     controller: TutorController,
     action: 'update',
   },
+  {
+    method: 'put',
+    route: '/pet/:petId/tutor/:tutorId',
+    controller: PetController,
+    action: 'update',
+  },
 ]

@@ -32,4 +32,37 @@ export class PetController {
 
     return this.petRepository.save(pet);
   }
+
+  async update(request: Request) {
+    const { id, name, species, carry, date_of_birth, weight } = request.body;
+    const tutorId = parseInt(request.params.tutorId);
+    const petId = parseInt(request.params.petId)
+
+    const tutor = await this.tutorsRepository.findOne({
+      where: {
+        id: tutorId,
+      },
+    });
+
+    const pet = await this.petRepository.findOne({
+      where: {
+        id: petId,
+      },
+    })
+
+    if (!pet) {
+      return "pet não encontrado";
+    }
+
+    pet.id = id
+    pet.name = name
+    pet.species = species
+    pet.carry = carry
+    pet.date_of_birth = date_of_birth
+    pet.weight = weight
+
+    await this.tutorsRepository.save(tutor)
+
+    return await this.petRepository.save(pet)
+  }
 }
